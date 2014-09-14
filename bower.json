@@ -1,0 +1,21 @@
+{
+  "name": "y",
+  "version": "0.0.0",
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "appPath": "app",
+  "authors": [
+    "wil-fayette <wil.fayette@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

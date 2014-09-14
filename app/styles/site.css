@@ -1,0 +1,768 @@
+﻿/*
+ * Base structure
+ */
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+    padding-top: 50px !important;
+    position: relative;
+    padding: 0;
+    background-color: #e5e5e5;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 12px;
+    color: #555;
+    height: 100%;
+}
+
+.selectedDate {
+    background-color: #517A9B !important;
+    color: white !important;
+}
+
+.movieScheduleFirst {
+    width: 400px;
+}
+
+.movieScheduleSecond {
+    width: 531px;
+}
+
+.movieScheduleThird {
+    width: 255px;
+}
+
+html {
+    height: 100%;
+}
+
+.scrollbar-dynamic {
+    max-height: 650px;
+    overflow: auto;
+}
+
+.groupByArrow {
+    color: #555;
+    position: relative;
+    text-decoration: none !important;
+    float: right;
+}
+
+.ng-table-pager {
+    overflow: hidden;
+    padding-top: 20px;
+}
+
+.ng-table-pagination {
+    float: left;
+    margin: 0px;
+}
+
+.editMovieButtons {
+    display: inline-block;
+float: left;
+margin-right: 3px;
+}
+
+.tableHeader {
+    background-color: #555;
+}
+
+.tableHeader th {
+    background-color: #555 !important;
+    border: 1px solid #f5f5f5 !important;   
+    color: #f1f1f1; 
+}
+
+.tableSubHeader th {
+    background-color: #f5f5f5;
+    border: 1px solid #eee;
+}
+
+.header {
+    border: 1px solid #eee !important;
+    color: #f1f1f1 !important;
+    background-color: #555 !important;
+}
+
+/*
+ * Global add-ons
+ */
+
+.sub-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.paddingRight5 {
+    padding-right: 5px;
+}
+
+.black {
+    color: black !important;
+}
+
+table td button {
+    background-color: #fff;
+border: 1px solid #ccc;
+border-radius: 3px;
+}
+
+/*
+ * Sidebar
+ */
+
+/* Hide for mobile, show later */
+.sidebar {
+  display: none;
+}
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 50px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background-color: #272930;
+    width: 215px;
+    box-shadow: inset -7px 0 15px -7px black;
+    border-top: 1px solid black;
+    padding-top: 31px;
+  }
+}
+
+/* Sidebar navigation */
+.nav-sidebar {
+  margin-right: -21px; /* 20px padding + 1px border */
+  margin-bottom: 20px;
+  margin-left: -20px;
+}
+.nav-sidebar > li > a {
+  padding-right: 20px;
+  padding-left: 20px;
+  color: #aaa;
+  font-size: 16px;
+}
+.nav-sidebar > .active > a {
+  color: #ccc;
+}
+
+.sectionLink {
+    color: white !important;
+}
+
+/*
+ * Main content
+ */
+
+.main {
+    border-top: 1px solid #ccc;
+background-color: #e5e5e5;
+  overflow: auto;
+  height:  100%;
+}
+@media (min-width: 768px) {
+  .main {
+      margin-left: 215px;
+  }
+}
+.main .page-header {
+  margin-top: 0;
+}
+
+.pageContent {
+    padding: 20px;
+    padding-top: 30px;
+    border-top: 1px solid #ddd;
+}
+
+.pageNavigation ul {
+    padding-left: 30px;
+    border-bottom: 1px solid #f1f1f1 !important;
+}
+
+.pageNavigationHeader a {
+    border: 0px !important;
+}
+
+.pageNavigationHeader li .active {
+    border-bottom: 1px solid #29599B;
+}
+
+/*
+ * Placeholder dashboard ideas
+ */
+
+.placeholders {
+  margin-bottom: 30px;
+  text-align: center;
+}
+.placeholders h4 {
+  margin-bottom: 0;
+}
+.placeholder {
+  margin-bottom: 20px;
+}
+.placeholder img {
+  display: inline-block;
+  border-radius: 50%;
+}
+
+
+.moviePoster img {
+    height: 150px;
+    width: 113px;
+    border-radius: 3px;
+}
+
+.widget {
+    /*overflow: hidden;*/
+    border-radius: 0px !important;
+    border-right: 1px solid #bbb;
+    border-bottom: 1px solid #bbb;
+    border-top: none;
+    border-left: none;
+}
+
+.calendar .btn-sm {
+    padding: 14px;
+    border: 1px solid #e9e9e9;
+    background-color: #f5f5f5;
+}
+
+.calendar {
+    text-align: center;
+}
+
+.calendar .well {
+    margin-bottom: none !important;
+}
+
+.calendar th {
+    padding: 6px;
+    background-color: white !important;
+}
+
+.calendar td {
+    padding: 2px;
+}
+
+.calendar .text-center { 
+    background-color: white;
+}
+
+.widgetContent {
+    overflow: hidden;
+    padding: 15px;
+}
+
+
+#mainNavigation {
+    margin-left: 245px;
+}
+
+.mainTab {
+    margin-left: 200px;
+    padding-left: 45px;
+    width: 650px;
+}
+
+.mainTabTab {
+
+    top: 12px;
+}
+
+.maxHeight_800 {
+    max-height: 800px;
+}
+
+.arrow-left {
+    float: left;
+    position: relative;
+    top: -27px;
+    left: 182px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid #e5e5e5; 
+}
+
+.mainTabTab a {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd !important;
+}
+
+.mainTab .active a {
+    background-color: #eee !important;
+    border-bottom: 1px solid #eee !important;
+}
+
+.height_800 {
+    height: 800px;
+}
+
+.height_300 {
+    height: 300px;
+}
+
+.height_355 {
+    height: 355px;
+}
+
+.height_330 {
+    height: 330px;
+}
+
+.height_500 {
+    height: 500px;
+}
+
+.height_412 {
+    height: 412px;
+ }
+
+.widgetBody {
+    /*overflow: hidden;*/
+}
+
+.tabContent {
+    padding-top: 25px;
+}
+
+tr:hover .deleteRow {
+    display: block;
+    cursor: pointer;
+    cursor: hand;
+}
+
+.deleteRow {
+    top: 4px;
+    display: none;
+}
+
+.widgetHeaderButton {
+    color: #29599B;
+    font-size: 17px;
+    line-height: 36px;
+    height: 36px;
+    padding-left: 12px;
+    padding-right: 12px;
+    border-left: 1px solid #eee;
+}
+
+.groupByHeader {
+    font-weight: bold;
+}
+
+.white {
+    color: white;
+}
+
+.groupByHeader:hover {
+    color: #29599B;
+    cursor: pointer;
+    cursor: hand;
+}
+
+
+.groupByArrow:hover {
+   color: #29599B;
+   cursor: pointer;
+   cursor: hand;
+}
+
+.widgetOptions {
+    margin-bottom: 15px;
+}
+
+.widgetFooter{
+  padding: 15px;
+/*overflow: hidden;*/
+height: 65px;
+}
+
+.activeCopy {
+    background-color: #8ac470 !important;
+}
+
+.noMargin {
+    margin: 0px !important;
+}
+
+.noBottomBorder {
+    border-bottom: 0px;
+}
+
+.widgetFooter h3 {
+    margin: 0px;
+    color: #fff;
+}
+
+td .movieYear {
+    text-align: right;
+}
+
+#topNavigation{
+    background-color: #f5f5f5;
+    border: none;
+}
+
+a .navbar-brand {
+    font-family: "Raleway", Helvetica, sans-serif;
+}
+
+h2 {
+   margin: 0;
+font-family: "Raleway", Helvetica, sans-serif;
+font-weight: bold;
+font-size: 17px;
+line-height: 17px;
+color: #29599B;
+}
+
+.borderless td {
+    border: none !important;
+}
+
+.wolfLogoSection {
+    width: 215px;
+    background-color: #29599B;
+    color: #f1f1f1 !important;
+    border-right: 1px solid black;
+}
+
+
+
+.panel-heading h2 {
+    float: left;
+    line-height: 37px;
+height: 37px;
+padding-left: 15px;
+}
+
+.widgetHeaderToolbar {
+    float: right;
+}
+
+.total {
+    top: -25px;
+    position: relative;
+    color: white;
+    font-size: 18px;
+}
+
+.movieInformation {
+
+}
+
+.movieSearch {
+    /*height: 262px;*/
+}
+
+.movieInformation input, .movieInformation textarea {
+    border: 1px solid #ddd;
+    box-shadow: none;
+    color: #777;
+
+}
+
+label {
+    color: #29599B;
+}
+
+.movieInformation input {
+    min-width: 200px;
+}
+
+
+.movieInformation .list-group {
+ margin: 0px;
+}
+
+.right {
+    float: right;
+    text-align: right;
+}
+
+.noPadding {
+    padding: 0px;
+}
+
+.movieYear {
+    text-align: right;
+}
+
+.paddingLeft {
+    padding: 0px 0px 0px 15px;
+}
+
+.movieDescription {
+    padding: 10px;
+    height: 137px;
+}
+
+.movieInformation textarea {
+  width: 100%;
+resize: none;
+margin-bottom: 0px;
+color: #777;
+}
+
+.movieCalendar .btn-sm {
+    padding: 27px;
+}
+
+.movieCalendar table {
+    margin: 20px auto;
+    border: none !important;
+}
+
+.movieCalendar table th {
+    padding-bottom: 10px;
+}
+
+.ourMovies table td button {
+ float: right;
+border: 0px;
+background-color: inherit;
+padding: 0px;
+}
+
+#movieCast {
+    min-height: 50px;
+}
+
+#movieDescription {
+    min-height: 235px;
+}
+
+.imagePlaceholder {
+    position: relative;
+    left: 35px;
+    top: 70px;
+    font-size: 30px;
+    color: #ddd;
+}
+
+.movieInformation .tab-content {
+    margin-top: 25px;
+}
+
+.inputFile {
+    margin-top: 20px;
+}
+
+.importantWordsLightBlue {
+    color: #428bca;
+    font-weight: bold;
+}
+
+.importantWordsWolfBlue {
+    color: #29599B;
+    font-weight: bold;
+}
+
+.line {
+    display: block;
+    padding: 8.5px;
+    padding-left: 0px;
+    margin: 0 0 10px;
+    font-size: 13px;
+    line-height: 1.42857143;
+    color: #333;
+    word-break: break-all;
+    border-bottom: 1px solid #ccc;
+}
+
+#moviePosterForm {
+    height: 75px;
+}
+
+.movieInformation {
+    margin-top: 27px;
+}
+
+.movieOptions button {
+    float: right;
+    border: 0px;
+    background-color: inherit;
+    padding: 0px;
+}
+
+
+
+.selectedPoster {
+    left: 60px;
+    font-size: 54px;
+    position: absolute;
+    top: 10px;
+    opacity: 1 !important;
+    color: #f1f1f1;
+}
+
+.moviePoster {
+    opacity: .9;
+    position: relative;
+}
+
+.widgetMessage{
+    color: #ccc;
+font-size: 27px;
+text-align: center;
+margin-top: 50px;
+}
+
+.selectedTrailer {
+    left: 195px;
+    font-size: 54px;
+    position: absolute;
+    top: 13px;
+    opacity: 1 !important;
+    color: #f1f1f1;
+}
+
+.trailers li {
+    overflow: hidden;
+    border-radius: 0px !important;
+}
+
+.trailers li input {
+    margin-top: 0px;
+}
+
+.trailers .liste-group-item:first-child {
+   border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+.moviePostersList {
+padding: 8px;
+border: 1px solid #ddd;
+border-radius: 3px;
+margin-left: 0px;
+margin-bottom: 0px;
+padding-top: 15px;
+padding-bottom: 15px;
+border-top-right-radius: 0px;
+border-top-left-radius: 0px;
+}
+
+.noBorderRadius {
+    border-radius: 0px;
+}
+
+.hover {
+    cursor: pointer !important;
+    cursor: hand;
+}
+
+.hover :hover {
+    background-color: red !important;
+}
+
+.widgetHeading {
+    overflow: hidden;
+    border-radius: 0px;
+    height: 37px;
+    background-color: #fff!important;
+    border-bottom: 1px solid #f1f1f1;
+    padding: 0px;
+}
+
+.pageHolder {
+    padding-top: 25px;
+}
+
+.scheduleRow {
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+    border-radius: 3px;
+}
+
+.imageWidget {
+    display: inline-block;
+border-radius: 3px;
+border: 2px solid #eee;
+margin-right: 20px;
+margin-bottom: 20px;
+}
+
+.imageWidget:hover {
+    cursor: hand;
+    cursor: pointer;
+}
+
+
+.selectedImage {
+    border: 2px solid #29599B;
+}
+
+table, tr, td {
+
+}
+
+#login {
+margin-right: -21px;
+margin-bottom: 20px;
+margin-left: -20px;
+overflow: hidden;
+padding: 15px;
+font-size: 14px;
+color: #aaa;
+border-top: 1px solid #222;
+border-bottom: 1px solid #222;
+}
+
+#login li {
+    list-style: none;
+    font-size: 16px;
+}
+
+
+.container {
+    margin-top: 10px;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+ }
+
+ .sideBar .panel {
+    margin-right: -21px;
+margin-left: -20px;
+background-color: inherit;
+border: none;
+ }
+
+ .sideBar .panel-heading {
+    background-color: none !important;
+    border: none;
+    color: #bbb;
+ }
+
+ .sideBar .panel-body {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border-top: 0px !important;
+ }
+
+ .sideNav li {
+    height: 38px;
+    overflow: hidden;
+    padding-left: 28px;
+ }
+
+ .bar {
+    /* padding: 15px; */
+    background-color: #ccc;
+    padding-top: 15px;
+    padding-left: 15px;
+    background-color: #eee;
+    border: 1px solid #ddd;
+ }
